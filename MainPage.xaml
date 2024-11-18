@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEvento.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             Title="MainPage"
+             BackgroundColor="CadetBlue">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                     Padding="10"
+                     Spacing="10">
+            <Label
+                Text="Show Paramore"
+                FontFamily="Londona-Regular"
+                TextTransform="Uppercase"
+                FontSize="40"
+                TextColor="white"
+                HorizontalTextAlignment="Center"/>
+            
+            <Image Source="paramore.jpg" HeightRequest="250" />
+
+            <Frame></Frame>
+
+            <Label Text="Data do Show"
+                   FontFamily="MagicRomanceForPersonalUse"
+                   FontSize="20"
+                   TextColor="white"
+                   HorizontalTextAlignment="Center"/>
+
+            <Frame Margin="5" Padding="5">
+                <VerticalStackLayout>
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                        <Label Text="Data de Início:"
+                               FontSize="20"/>
+                        <DatePicker x:Name="dtpck_inicio"
+                            DateSelected="dtpck_inicio_DateSelected"
+                                        Format="dd/MM/yyyy"
+                                    FontSize="16"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                        <Label Text="Data de término:"
+                               FontSize="20"/>
+                        <DatePicker x:Name="dtpck_fim"
+                                        Format="dd/MM/yyyy"
+                                     FontSize="16"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame></Frame>
+
+            <Label Text="Número de pessoas:"
+                    FontFamily="MagicRomanceForPersonalUse"
+               FontSize="20"
+               TextColor="white"
+               HorizontalTextAlignment="Center"/>
+             <Frame Margin="5" Padding="5">
+                <VerticalStackLayout>
+
+                    <Label 
+                          Text="{Binding Value}"
+                          BindingContext="{x:Reference stp_participante}"
+                          HorizontalTextAlignment="Center"/>
+
+                    <Stepper 
+                         x:Name="stp_participante"
+                         Minimum="0"
+                         Maximum="100"
+                         Increment="1" 
+                        HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame></Frame>
+
+            <Label Text="Local do evento"
+           FontFamily="MagicRomanceForPersonalUse"
+           FontSize="20"
+           TextColor="white"
+           HorizontalTextAlignment="Center"/>
+
+            <Frame Padding="5" Margin="5">
+                <VerticalStackLayout>
+
+                    <Picker x:Name="pck_locais"
+                                Title="Selecione o local"
+                            FontSize="15"
+                            FontFamily="MagicRomanceForPersonalUse"
+                                ItemDisplayBinding="{Binding Descricao}"/>
+                </VerticalStackLayout>
+            </Frame>
+
+
+            <Button
+                Text="Avançar"
+                FontFamily="MagicRomanceForPersonalUse"
+                x:Name="Btn_avancar"
+                Clicked="Btn_avancar_Clicked"
+                BackgroundColor="{StaticResource Gray100}"
+                TextColor="Black"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

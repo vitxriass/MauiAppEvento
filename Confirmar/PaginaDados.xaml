@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEvento.Confirmar.PaginaDados"
+             NavigationPage.HasNavigationBar="False"
+             Title="PaginaDados"
+             BackgroundColor="CadetBlue">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                             Padding="10"
+                             Spacing="10">
+
+            <Label Text="Confirmação de Show"
+                   FontFamily="Londona-Regular"
+                   FontSize="35"
+                   TextColor="white" />
+
+            <Image Source="paramoress.png" HeightRequest="250" />
+
+            <Frame></Frame>
+
+
+            <Label Text="Data escolhida"
+                   TextTransform="Uppercase"
+                   FontFamily="Londona-Regular"
+                   FontSize="Subtitle"
+                   TextColor="white" />
+
+            <Frame Padding="5" Margin="5">
+
+                <VerticalStackLayout>
+
+                    <Label Text="{Binding Datainicio}"/>
+
+                    <Label Text="{Binding Datafim}"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <Label Text="Quantidade de dias"
+                TextTransform="Uppercase"
+                FontFamily="Londona-Regular"
+                FontSize="Subtitle"
+                TextColor="white" />
+
+            <Frame>
+
+                <VerticalStackLayout>
+
+                    <Label Text="Quantidade de dias:"/>
+
+                    <Label Text="{Binding Dias}"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <Label Text="Número de participantes:"
+                   FontSize="Subtitle"
+                   FontFamily="Londona-Regular"
+                   TextTransform="Uppercase"
+                   TextColor="White" />
+
+            <Frame Padding="5" Margin="5">
+
+                <VerticalStackLayout>
+
+                    <Label Text="{Binding QntParticipantes}"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <Label Text="Local do Show"
+                   TextTransform="Uppercase"
+                   FontSize="Subtitle"
+                   FontFamily="Londona-Regular"
+                   TextColor="White" />
+
+            <Frame Padding="5" Margin="5">
+
+                <VerticalStackLayout>
+
+                    <Label Text="{Binding LocalSelecionado.Descricao}"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <Label Text="Custo total do show"
+                   TextTransform="Uppercase"
+                   FontSize="Subtitle"
+                   FontFamily="Londona-Regular"
+                   TextColor="White" />
+
+            <Frame Padding="5" Margin="5">
+
+                <VerticalStackLayout>
+
+                    <Label Text="{Binding ValorTotal}"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <Button Text="Confirmar"
+                    x:Name="Btn_confirmar"
+                    FontFamily="MagicRomanceForPersonalUse"
+                    Clicked="Btn_confirmar_Clicked"
+                    BackgroundColor="{StaticResource Gray100}"
+                    TextColor="CadetBlue" />
+
+            <Button Text="Voltar"
+                    x:Name="Btn_voltar"
+                    FontFamily="MagicRomanceForPersonalUse"
+                    Clicked="Btn_voltar_Clicked"
+                    BackgroundColor="{StaticResource Gray100}"
+                    TextColor="CadetBlue" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
